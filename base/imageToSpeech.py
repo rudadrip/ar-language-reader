@@ -19,6 +19,3 @@ def convertImage (image):
     im = Image.open(image)
     im.save(f"{splittage[0].strip()}.png")
 
-convertImage ("example.jpg")
-words = grabImageText("example.png", "ben")
-textToSpeech(words, "example", "bn", False)
