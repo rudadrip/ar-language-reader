@@ -1,13 +1,25 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
-def resize (img):
+def imgToCV2 (img):
   image = cv2.imread(img)
-  smaller = cv2.resize(image, (0, 0), fx = 0.33, fy = 0.33)
+  return image
+
+def saveFile (img):
+   return "foo"
+
+def resize (image):
+  smaller = cv2.resize(image, (0, 0), fx = 0.33, fy = 0.33) 
   cv2.imshow('Resized',smaller)
   cv2.waitKey(0)
   cv2.destroyAllWindows()
+  return smaller
+  
+
+def noise_reduction (img):
+   return "foo"
 
 def deskew(img):
   img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -37,5 +49,3 @@ def thresholding (image):
   cv2.imshow('Post', thresh1)
   if cv2.waitKey(0) & 0xff == 27:  
     cv2.destroyAllWindows()  
-
-resize("example.jpg")

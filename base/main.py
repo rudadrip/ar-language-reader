@@ -1,5 +1,9 @@
 from imageToSpeech import *
+from preprocessing import * 
 
-convertImage ("example.jpg")
-words = grabImageText("example.png", "ben")
+print("Image --> Speech")
+print("File Name: ", end="")
+fileName = input().strip()
+newFileName = convertImage (fileName)
+words = grabImageText(newFileName, "ben")
 textToSpeech(words, "example", "bn", False)
