@@ -2,6 +2,7 @@ from gtts import gTTS
 from PIL import Image
 import pytesseract
 import os
+import re
 
 def textToSpeech (msg, fileName, language, isSlow):
   outputFile = gTTS(text=msg, lang=language, slow=isSlow)
@@ -13,6 +14,15 @@ def grabImageText (image, language):
   print(text)
   return text
 
+def detect_image_lang(img_path):
+    try:
+        osd = pytesseract.image_to_osd(img_path)
+        script = re.search("Script: ([a-zA-Z]+)\n", osd).group(1)
+        conf = re.search("Script confidence: (\d+\.?(\d+)?)", osd).group(1)
+        return script, float(conf)
+    except:
+        return None, 0.0
+
 def convertImage (image):
   image=str(image)
   splittage = image.split(".")
@@ -20,5 +30,3 @@ def convertImage (image):
     im = Image.open(image)
     im.save(f"{splittage[0].strip()}.png")
   return f"{splittage[0].strip()}.png"
-
-print(grabImageText("example.png","ben"))
