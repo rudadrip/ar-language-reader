@@ -1,14 +1,44 @@
 <!doctype html>
-<html lang="en" data-theme="corporate">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.lime.min.css"
+    />
     <title>Auto Read</title>
   </head>
   <body>
-    <navbar-c></navbar-c>
-    <script src="navbarC.js"></script>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><strong>Auto Read</strong></li>
+        </ul>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://github.com/rudadrip" target="_blank"><button class="secondary">Check me out!</button></a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container" class="center">
+      <div class="grid">
+        <div>
+          <h2>Step 1</h2>
+          <input type="file" />
+        </div>
+        <div>
+          <h2>Step 2</h2>
+          <input type="text" name="text" placeholder="API Key" aria-label="Text" />
+        </div>
+      </div>
+      <br>
+      <p><b>NOTE: </b>File extension support: .png, .jpg, File size limit: 2 MB, Image dimension limit: 1500 pixel, Possible Language Code Combination: Languages sharing the same written script (e.g. latin) can be used together. English can be used with any language.</p>
+      <br>
+      <div style="text-align: center;"><button>Submit</button></div>
+    </main>
   </body>
 </html>
